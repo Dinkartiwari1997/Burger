@@ -5,7 +5,12 @@ import classes from "./Model.module.css";
 
 class Model extends Component {
 
-   
+   shouldComponentUpdate(nextProps, nextState){
+        return   nextProps.show !== this.props.show;
+   }
+   componentWillUpdate(){
+       console.log("[Model] WillUpdate");
+   }
 
     render(){
         return(
